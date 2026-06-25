@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Karo van Tonder — Professional Windsurfer</title>
+<meta name="description" content="Karo van Tonder — South African pro windsurfer. African speed record holder, slalom champion, and the first woman in the world to win an 80km windsurf race." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#03102a;
+    --navy:#0a2649;
+    --ocean:#10416f;
+    --ocean-mid:#1c5e96;
+    --sky:#3d83b6;
+    --sky-light:#7eaed1;
+    --sky-pale:#cfe2f1;
+    --ink:#f5f9fc;
+    --ink-soft:#cbdcee;
+    --muted:#8aa4bf;
+    --gold:#e9c89a;
+    --gold-deep:#c9a878;
+    --rose:#f4b5bc;
+    --rose-deep:#e89099;
+    --teal-soft:#7fd9e6;
+    --card-glass:rgba(255,255,255,0.05);
+    --card-glass-hover:rgba(255,255,255,0.09);
+    --card-light:#ffffff;
+    --line:rgba(255,255,255,0.10);
+    --line-strong:rgba(255,255,255,0.20);
+    --shadow:0 10px 30px rgba(3,16,42,0.35);
+    --shadow-lg:0 24px 60px rgba(3,16,42,0.50);
+    --shadow-gold:0 0 40px rgba(233,200,154,0.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--navy-deep);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+    background-image:
+      linear-gradient(180deg,
+        #03102a 0%,
+        #082247 18%,
+        #0e3a67 42%,
+        #1b5a96 65%,
+        #3d83b6 88%,
+        #6ba3cd 100%);
+    background-attachment:fixed;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* ===== NAV ===== */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    backdrop-filter:blur(22px) saturate(140%);
+    background:rgba(3,16,42,0.55);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1280px;margin:0 auto;
+    padding:18px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:24px;letter-spacing:2px;color:var(--ink);
+  }
+  .logo span{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:500;
+    background:linear-gradient(120deg,var(--gold) 0%,var(--rose) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    padding:0 4px;
+  }
+  .nav-links{display:flex;gap:36px;font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase}
+  .nav-links a{color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--gold)}
+  @media(max-width:768px){.nav-links{display:none}}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;align-items:center;
+    padding:140px 32px 80px;
+    overflow:hidden;
+    background:
+      radial-gradient(900px 600px at 88% 12%,rgba(233,200,154,0.22),transparent 55%),
+      radial-gradient(900px 700px at 8% 80%,rgba(244,181,188,0.14),transparent 60%),
+      radial-gradient(1100px 700px at 50% 100%,rgba(127,217,230,0.18),transparent 60%);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(transparent 95%, rgba(255,255,255,0.06) 95%),
+      linear-gradient(90deg, transparent 95%, rgba(255,255,255,0.06) 95%);
+    background-size:60px 60px;
+    pointer-events:none;
+    opacity:0.5;
+  }
+  /* Decorative wave */
+  .wave{
+    position:absolute;left:0;right:0;bottom:-2px;width:100%;
+    height:120px;pointer-events:none;opacity:0.7;
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    max-width:1280px;margin:0 auto;width:100%;
+    display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center;
+  }
+  @media(max-width:960px){.hero-inner{grid-template-columns:1fr}}
+  .tag{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:8px 16px;border-radius:999px;
+    background:rgba(233,200,154,0.12);
+    border:1px solid rgba(233,200,154,0.40);
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold);font-weight:600;
+  }
+  .tag .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold)}
+  .title-prelude{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:500;
+    font-size:clamp(20px,2.4vw,30px);
+    color:var(--gold);
+    margin:18px 0 -8px;letter-spacing:0.5px;
+  }
+  h1.title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(64px,11vw,168px);
+    line-height:0.90;letter-spacing:-1px;
+    margin:6px 0 8px;
+    color:#ffffff;
+    text-shadow:0 6px 40px rgba(3,16,42,0.40);
+  }
+  h1.title .accent{
+    background:linear-gradient(120deg,var(--gold) 0%,var(--rose) 60%,var(--gold) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .subtitle{
+    font-size:clamp(16px,1.4vw,19px);
+    color:var(--ink-soft);max-width:540px;
+    margin-bottom:36px;line-height:1.7;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 24px;border-radius:999px;
+    font-weight:600;font-size:14px;letter-spacing:0.3px;
+    transition:transform .2s,background .2s,border-color .2s;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{
+    background:linear-gradient(120deg,var(--gold) 0%,var(--rose) 100%);
+    color:var(--navy-deep);
+    box-shadow:0 10px 30px rgba(233,200,154,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(244,181,188,0.35)}
+  .btn-ghost{border-color:rgba(255,255,255,0.35);color:#ffffff}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(233,200,154,0.06)}
+
+  /* Hero stat card */
+  .stat-card{
+    position:relative;
+    background:linear-gradient(160deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03));
+    border:1px solid var(--line-strong);
+    border-radius:24px;padding:40px;
+    backdrop-filter:blur(20px) saturate(140%);
+    box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(255,255,255,0.10);
+  }
+  .stat-card::before{
+    content:"";position:absolute;top:0;left:24px;right:24px;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold);font-weight:700;margin-bottom:12px;
+  }
+  .stat-big{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(72px,8vw,124px);
+    line-height:1;letter-spacing:-1px;color:#ffffff;
+    background:linear-gradient(180deg,#ffffff 0%,var(--sky-light) 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .stat-unit{font-size:0.35em;color:var(--gold);letter-spacing:3px;margin-left:8px;-webkit-text-fill-color:var(--gold)}
+  .stat-desc{margin-top:18px;color:var(--ink-soft);font-size:14px;line-height:1.6}
+  .stat-rank{
+    display:flex;gap:16px;margin-top:28px;padding-top:24px;
+    border-top:1px solid var(--line);
+  }
+  .stat-rank div{flex:1}
+  .stat-rank .v{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--gold);letter-spacing:1px}
+  .stat-rank .l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+  /* ===== SECTIONS ===== */
+  section{padding:120px 32px;position:relative}
+  .container{max-width:1280px;margin:0 auto}
+  .eyebrow{
+    font-size:11px;letter-spacing:5px;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:16px;
+    display:inline-flex;align-items:center;gap:12px;
+  }
+  .eyebrow::before{
+    content:"";width:32px;height:1px;background:var(--gold);
+  }
+  h2.section-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(42px,6vw,82px);
+    line-height:1;letter-spacing:-0.5px;
+    margin-bottom:24px;color:#ffffff;
+  }
+  h2.section-title em{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:500;
+    background:linear-gradient(120deg,var(--gold),var(--rose));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    letter-spacing:0;
+  }
+  .section-lead{font-size:18px;color:var(--ink-soft);max-width:680px;margin-bottom:64px;line-height:1.7}
+
+  /* ===== ABOUT ===== */
+  #about{background:transparent}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}}
+  .about-portrait{
+    position:relative;
+    aspect-ratio:4/5;border-radius:24px;
+    background:
+      radial-gradient(circle at 30% 15%,rgba(233,200,154,0.35),transparent 55%),
+      radial-gradient(circle at 80% 90%,rgba(244,181,188,0.25),transparent 50%),
+      linear-gradient(160deg,#1c5e96 0%,#082247 60%,#03102a 100%);
+    overflow:hidden;
+    display:flex;align-items:flex-end;justify-content:flex-start;
+    padding:36px;
+    box-shadow:var(--shadow-lg),var(--shadow-gold);
+    border:1px solid var(--line);
+  }
+  .about-portrait::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 75% 75%,rgba(255,255,255,0.12),transparent 45%);
+  }
+  .about-portrait .floating-num{
+    position:absolute;top:36px;right:36px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:220px;line-height:0.8;
+    color:transparent;
+    -webkit-text-stroke:1px rgba(233,200,154,0.45);
+    letter-spacing:-4px;
+  }
+  .portrait-meta{position:relative;z-index:2;color:#fff}
+  .portrait-meta .nm{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:2px;margin-top:4px}
+  .portrait-meta .lc{
+    color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .portrait-meta .lc::before{content:"";width:24px;height:1px;background:var(--gold)}
+  .about-text p{margin-bottom:20px;color:var(--ink-soft);font-size:17px;line-height:1.75}
+  .about-text p:first-of-type::first-letter{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:600;
+    font-size:88px;float:left;line-height:0.85;
+    margin:8px 14px 0 0;
+    background:linear-gradient(120deg,var(--gold),var(--rose));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .quick-facts{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px;
+  }
+  .qf{
+    padding:20px;border:1px solid var(--line);border-radius:14px;
+    background:var(--card-glass);
+    backdrop-filter:blur(12px);
+    transition:border-color .2s,background .2s;
+  }
+  .qf:hover{border-color:rgba(233,200,154,0.35);background:var(--card-glass-hover)}
+  .qf .k{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:600}
+  .qf .v{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:#fff}
+
+  /* ===== DISCIPLINES ===== */
+  #disciplines{background:transparent}
+  .disc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:900px){.disc-grid{grid-template-columns:1fr}}
+  .disc{
+    position:relative;padding:40px 32px;border-radius:20px;
+    background:var(--card-glass);
+    border:1px solid var(--line);
+    backdrop-filter:blur(14px);
+    overflow:hidden;
+    transition:transform .3s,border-color .3s,background .3s;
+  }
+  .disc::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    opacity:0;transition:opacity .3s;
+  }
+  .disc:hover{transform:translateY(-6px);border-color:rgba(233,200,154,0.35);background:var(--card-glass-hover)}
+  .disc:hover::before{opacity:1}
+  .disc-icon{
+    width:60px;height:60px;border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+    color:var(--navy-deep);margin-bottom:22px;
+    box-shadow:0 8px 24px rgba(233,200,154,0.25);
+  }
+  .disc:nth-child(2) .disc-icon{background:linear-gradient(135deg,var(--rose),var(--rose-deep));box-shadow:0 8px 24px rgba(244,181,188,0.25)}
+  .disc:nth-child(3) .disc-icon{background:linear-gradient(135deg,var(--teal-soft),var(--sky));box-shadow:0 8px 24px rgba(127,217,230,0.25)}
+  .disc h3{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:1px;margin-bottom:12px;color:#ffffff}
+  .disc p{color:var(--ink-soft);font-size:15px;line-height:1.7}
+
+  /* ===== ACHIEVEMENTS ===== */
+  #achievements{background:transparent}
+  .timeline{position:relative;padding-left:36px;margin-top:32px}
+  .timeline::before{
+    content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;
+    background:linear-gradient(180deg,var(--gold),var(--rose),transparent);
+  }
+  .ach{
+    position:relative;padding:26px 30px;margin-bottom:18px;
+    background:var(--card-glass);border:1px solid var(--line);border-radius:16px;
+    backdrop-filter:blur(12px);
+    transition:transform .2s,background .2s,border-color .2s;
+  }
+  .ach:hover{transform:translateX(6px);background:var(--card-glass-hover);border-color:rgba(233,200,154,0.30)}
+  .ach::before{
+    content:"";position:absolute;left:-34px;top:34px;width:14px;height:14px;border-radius:50%;
+    background:linear-gradient(135deg,var(--gold),var(--rose));
+    box-shadow:0 0 0 4px rgba(233,200,154,0.18),0 0 14px rgba(233,200,154,0.4);
+  }
+  .ach .yr{
+    display:inline-block;font-family:'Bebas Neue',sans-serif;
+    font-size:22px;letter-spacing:3px;color:var(--gold);margin-bottom:4px;
+  }
+  .ach h4{font-size:18px;font-weight:600;margin-bottom:6px;color:#ffffff;letter-spacing:0.2px}
+  .ach p{color:var(--ink-soft);font-size:14px;line-height:1.6}
+
+  /* ===== GALLERY ===== */
+  #gallery{
+    background:transparent;
+    position:relative;overflow:hidden;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:150px;gap:18px;
+  }
+  @media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}}
+  .photo{
+    position:relative;border-radius:20px;overflow:hidden;
+    background:
+      radial-gradient(circle at 30% 20%,rgba(233,200,154,0.18),transparent 55%),
+      radial-gradient(circle at 80% 80%,rgba(244,181,188,0.14),transparent 55%),
+      linear-gradient(160deg,#1c5e96 0%,#082247 70%,#03102a 100%);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    cursor:pointer;
+    transition:transform .4s,box-shadow .4s,border-color .3s;
+    display:flex;align-items:flex-end;
+    padding:20px;color:#fff;
+  }
+  .photo:hover{transform:translateY(-4px) scale(1.01);box-shadow:var(--shadow-lg),var(--shadow-gold);border-color:rgba(233,200,154,0.35)}
+  .photo::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 55%,rgba(3,16,42,0.65) 100%);
+  }
+  .photo .label{position:relative;z-index:2;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600;color:var(--gold)}
+  .photo .place-icon{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:54px;height:54px;border-radius:50%;
+    background:rgba(233,200,154,0.10);
+    color:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    border:1px dashed rgba(233,200,154,0.45);
+    z-index:2;
+  }
+  .photo.large{grid-column:span 3;grid-row:span 2}
+  .photo.tall{grid-column:span 2;grid-row:span 2}
+  .photo.wide{grid-column:span 4;grid-row:span 1}
+  .photo.small{grid-column:span 2;grid-row:span 1}
+  @media(max-width:900px){
+    .photo.large,.photo.tall,.photo.wide,.photo.small{grid-column:span 2;grid-row:span 1}
+    .photo.large,.photo.tall{grid-row:span 2}
+  }
+  .gallery-note{
+    margin-top:48px;padding:22px 26px;border-radius:14px;
+    background:var(--card-glass);border:1px dashed var(--line-strong);
+    backdrop-filter:blur(10px);
+    font-size:14px;color:var(--ink-soft);text-align:center;
+  }
+  .gallery-note code{background:rgba(233,200,154,0.12);color:var(--gold);padding:3px 10px;border-radius:6px;font-family:monospace}
+
+  /* ===== SPONSORS ===== */
+  #sponsors{background:transparent}
+  .sponsor-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  @media(max-width:900px){.sponsor-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.sponsor-grid{grid-template-columns:1fr}}
+  .sponsor{
+    position:relative;padding:34px 30px;border-radius:18px;
+    background:var(--card-glass);
+    border:1px solid var(--line);
+    backdrop-filter:blur(14px);
+    transition:transform .3s,background .3s,border-color .3s;
+    display:flex;flex-direction:column;
+    min-height:250px;overflow:hidden;
+  }
+  .sponsor::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),var(--rose),transparent);
+    opacity:0;transition:opacity .3s;
+  }
+  .sponsor:hover{
+    transform:translateY(-6px);
+    background:var(--card-glass-hover);
+    border-color:rgba(233,200,154,0.30);
+  }
+  .sponsor:hover::before{opacity:1}
+  .sponsor-logo{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:30px;letter-spacing:2px;
+    color:#ffffff;
+    margin-bottom:6px;
+  }
+  .sponsor-cat{
+    font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:18px;
+  }
+  .sponsor p{color:var(--ink-soft);font-size:14px;line-height:1.65;flex:1}
+  .sponsor-link{
+    margin-top:18px;font-size:12px;font-weight:600;color:var(--rose);
+    display:inline-flex;align-items:center;gap:6px;letter-spacing:1px;text-transform:uppercase;
+  }
+  .sponsor-link::after{content:"→";transition:transform .2s}
+  .sponsor:hover .sponsor-link::after{transform:translateX(4px)}
+
+  /* ===== FOOTER ===== */
+  footer{
+    padding:90px 32px 40px;
+    background:linear-gradient(180deg,transparent 0%,#03102a 70%);
+    color:var(--ink);
+    text-align:center;
+    position:relative;
+  }
+  .footer-name{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(48px,7vw,76px);letter-spacing:5px;
+    background:linear-gradient(120deg,#ffffff 0%,var(--gold) 50%,var(--rose) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:8px;
+  }
+  .footer-tag{
+    font-family:'Playfair Display',serif;font-style:italic;
+    color:var(--gold);margin-bottom:36px;font-size:16px;
+  }
+  .socials{display:flex;justify-content:center;gap:14px;margin-bottom:44px;flex-wrap:wrap}
+  .socials a{
+    width:46px;height:46px;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    border:1px solid var(--line-strong);
+    color:var(--ink-soft);
+    transition:border-color .2s,color .2s,background .2s,transform .2s;
+  }
+  .socials a:hover{border-color:var(--gold);color:var(--gold);background:rgba(233,200,154,0.08);transform:translateY(-2px)}
+  .copyright{font-size:12px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+
+  /* ===== STICKY SOCIAL RAIL ===== */
+  .side-socials{
+    position:fixed;left:24px;top:50%;transform:translateY(-50%);
+    z-index:90;
+    display:flex;flex-direction:column;align-items:center;gap:18px;
+  }
+  .side-socials::after{
+    content:"";width:1px;height:80px;
+    background:linear-gradient(180deg,var(--gold),transparent);
+    margin-top:8px;
+  }
+  .side-socials a{
+    width:38px;height:38px;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    border:1px solid var(--line-strong);
+    color:var(--ink-soft);
+    background:rgba(3,16,42,0.40);
+    backdrop-filter:blur(10px);
+    transition:transform .2s,color .2s,border-color .2s,background .2s;
+  }
+  .side-socials a:hover{
+    transform:translateY(-2px);
+    color:var(--gold);border-color:var(--gold);
+    background:rgba(233,200,154,0.10);
+  }
+  @media(max-width:1080px){.side-socials{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">KARO <span>/</span> VAN TONDER</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#disciplines">Disciplines</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#sponsors">Sponsors</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== STICKY SOCIAL RAIL ===== -->
+<aside class="side-socials" aria-label="Social links">
+  <a href="https://www.instagram.com/karo.vantonder" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+  </a>
+  <a href="https://www.facebook.com/karovantonderSA89/" target="_blank" rel="noopener" aria-label="Facebook">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+  </a>
+  <a href="https://www.youtube.com/c/KarovanTonder" target="_blank" rel="noopener" aria-label="YouTube">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C16.6 4 12 4 12 4s-4.6 0-7.9.2c-.5.1-1.4.1-2.2 1C1.2 5.9 1 7.5 1 7.5S.8 9.4.8 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.7.2 7.7.2s4.6 0 7.9-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8v-1.4c0-1.9-.2-3.8-.2-3.8zM9.7 15.1V7.9l6.2 3.6-6.2 3.6z"/></svg>
+  </a>
+  <a href="https://x.com/karosa89" target="_blank" rel="noopener" aria-label="X (Twitter)">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+</aside>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="tag"><span class="dot"></span>Pro Windsurfer · SA89</span>
+      <div class="title-prelude">A force of nature,</div>
+      <h1 class="title">CHASING<br/><span class="accent">THE WIND.</span></h1>
+      <p class="subtitle">South African and African speed record holder. Slalom champion. The first woman in the world to win an 80&nbsp;km windsurf race. Based in Langebaan — chasing 40&nbsp;knot storms across the planet.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#achievements">View Achievements</a>
+        <a class="btn btn-ghost" href="#sponsors">Meet the Sponsors</a>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Personal Best · 500m Average</div>
+      <div class="stat-big">44.55<span class="stat-unit">KTS</span></div>
+      <div class="stat-desc">5th fastest woman in the world over 500&nbsp;m, set at the Lüderitz Speed Challenge.</div>
+      <div class="stat-rank">
+        <div>
+          <div class="v">#1</div>
+          <div class="l">Africa</div>
+        </div>
+        <div>
+          <div class="v">#5</div>
+          <div class="l">World</div>
+        </div>
+        <div>
+          <div class="v">80<span style="font-size:14px;color:var(--muted);margin-left:4px">KM</span></div>
+          <div class="l">World 1st</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,64 C240,96 480,16 720,32 C960,48 1200,112 1440,80 L1440,120 L0,120 Z" fill="rgba(255,255,255,0.04)"/>
+    <path d="M0,84 C240,116 480,36 720,52 C960,68 1200,132 1440,100 L1440,120 L0,120 Z" fill="rgba(255,255,255,0.06)"/>
+  </svg>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-portrait">
+        <div class="floating-num">89</div>
+        <div class="portrait-meta">
+          <div class="lc">Langebaan · South Africa</div>
+          <div class="nm">KARO VAN TONDER</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">About</div>
+        <h2 class="section-title">Born of wind <em>&amp; water.</em></h2>
+        <div class="about-text">
+          <p>Karo was thirteen years old when her father first pushed her onto a windsurf board during a family holiday on the West Coast. Two decades later she is one of the fastest women on the planet — a multi-discipline professional rider who calls Langebaan, South Africa, home.</p>
+          <p>Between competitions she runs a wedding cake business and holds a degree in Food Science. On the water she races slalom, hunts down speed records, and chases waves — pushing her limits in the 40-knot storms that other riders run from.</p>
+        </div>
+        <div class="quick-facts">
+          <div class="qf"><div class="k">Born</div><div class="v">Oct 1989</div></div>
+          <div class="qf"><div class="k">Home Spot</div><div class="v">Langebaan</div></div>
+          <div class="qf"><div class="k">Disciplines</div><div class="v">Speed · Slalom · Wave</div></div>
+          <div class="qf"><div class="k">Sail Brand</div><div class="v">Severne</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DISCIPLINES ===== -->
+<section id="disciplines">
+  <div class="container">
+    <div class="eyebrow">Disciplines</div>
+    <h2 class="section-title">Three boards. <em>One rider.</em></h2>
+    <p class="section-lead">Few windsurfers compete seriously across multiple disciplines. Karo does — from flat-water speed runs at over 80 km/h, to head-to-head slalom, to riding the surf back home in Langebaan.</p>
+    <div class="disc-grid">
+      <div class="disc">
+        <div class="disc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h13l-4-4M3 12l13 0-4 4M19 5v14"/></svg>
+        </div>
+        <h3>Speed</h3>
+        <p>Sub-300m and 500m runs in the gnarliest winds on earth. Personal best of 44.55 knots — a top-five all-time mark for women in the sport.</p>
+      </div>
+      <div class="disc">
+        <div class="disc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18"/></svg>
+        </div>
+        <h3>Slalom</h3>
+        <p>High-stakes head-to-head racing through downwind courses. IFCA African Slalom Champion and a fixture on the international scene.</p>
+      </div>
+      <div class="disc">
+        <div class="disc-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 16c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 20c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></svg>
+        </div>
+        <h3>Wave</h3>
+        <p>Back home in Langebaan and across the Cape coastline, Karo trains in real ocean conditions on a 73L Severne wave board.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS ===== -->
+<section id="achievements">
+  <div class="container">
+    <div class="eyebrow">Career Highlights</div>
+    <h2 class="section-title">A record book <em>of wind.</em></h2>
+    <p class="section-lead">Selected results from a career spanning more than a decade of professional racing — from the West Coast of South Africa to Mauritius, France and Lüderitz.</p>
+    <div class="timeline">
+      <div class="ach">
+        <span class="yr">2023</span>
+        <h4>3rd Female · Defi Wind, France</h4>
+        <p>Podium finish on fin at the world's largest windsurf race — a 1,500-rider mass-start spectacle.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2023</span>
+        <h4>1st Female · Langebaan Downwind Dash</h4>
+        <p>Another home-water title at the iconic West Coast downwind classic.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2019</span>
+        <h4>2nd Female · Lüderitz Speed Challenge · 44.55&nbsp;knots</h4>
+        <p>Personal best — making her the 5th fastest female windsurfer of all time over 500&nbsp;m.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2018</span>
+        <h4>African & South African Speed Record · 41.25 → 44.55&nbsp;knots</h4>
+        <p>Set, and then re-set, the continental speed record at the Lüderitz Speed Challenge.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2017</span>
+        <h4>1st Woman in the World · 80&nbsp;km Windsurf Race</h4>
+        <p>The first female windsurfer ever to complete — and win — the gruelling 80&nbsp;km Mauritius race.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2017</span>
+        <h4>IFCA African Slalom Champion · Mauritius</h4>
+        <p>Top of the podium at the IFCA African/Asian Slalom Championship.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2016</span>
+        <h4>1st Female · South African Cup Week</h4>
+        <p>National title in a multi-discipline series across South Africa's premier venues.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2011–2014</span>
+        <h4>1st Female · Langebaan Downwind Dash (4× in a row)</h4>
+        <p>Four consecutive wins at the home-water classic — the beginning of a championship career.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+  <div class="container">
+    <div class="eyebrow">In Action</div>
+    <h2 class="section-title">On the <em>water.</em></h2>
+    <p class="section-lead">From the speed channels of Lüderitz to the home swells of Langebaan — the world Karo competes in. Add your favourite shots to the slots below.</p>
+    <div class="gallery-grid">
+      <div class="photo large">
+        <div class="place-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
+        </div>
+        <div class="label">Lüderitz · Speed Run</div>
+      </div>
+      <div class="photo tall">
+        <div class="place-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
+        </div>
+        <div class="label">Langebaan · Home Water</div>
+      </div>
+      <div class="photo small">
+        <div class="place-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
+        </div>
+        <div class="label">Defi Wind · France</div>
+      </div>
+      <div class="photo wide">
+        <div class="place-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
+        </div>
+        <div class="label">Slalom Racing</div>
+      </div>
+      <div class="photo small">
+        <div class="place-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
+        </div>
+        <div class="label">Mauritius</div>
+      </div>
+      <div class="photo small">
+        <div class="place-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
+        </div>
+        <div class="label">West Coast Waves</div>
+      </div>
+    </div>
+    <div class="gallery-note">
+      Drop your photos into an <code>/images</code> folder and the placeholders above will become a real gallery.
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPONSORS ===== -->
+<section id="sponsors">
+  <div class="container">
+    <div class="eyebrow">Partners</div>
+    <h2 class="section-title">The team <em>behind the speed.</em></h2>
+    <p class="section-lead">Every record and every podium is built on the trust of the brands that back her. These are the partners who put Karo on the water.</p>
+    <div class="sponsor-grid">
+
+      <div class="sponsor">
+        <div class="sponsor-logo">SEVERNE</div>
+        <div class="sponsor-cat">Sails &amp; Wetsuits</div>
+        <p>Karo has been on the Severne international team since February 2016, riding the Reflex and Blade Pro race sails and Severne wave gear in every condition the planet throws at her.</p>
+        <a class="sponsor-link" href="https://severnesails.com" target="_blank" rel="noopener">Visit Severne</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">STARBOARD</div>
+        <div class="sponsor-cat">Boards</div>
+        <p>The board under her feet for racing and free riding. Starboard's slalom and speed shapes have carried Karo to multiple national, African and world results.</p>
+        <a class="sponsor-link" href="https://windsurf.star-board.com" target="_blank" rel="noopener">Visit Starboard</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">AV BOARDS</div>
+        <div class="sponsor-cat">Custom Speed &amp; Slalom Boards</div>
+        <p>Hand-shaped speed and slalom weapons used in record runs at Lüderitz and on the international circuit. Precision engineering for the fastest 500&nbsp;m on the planet.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover AV Boards</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">VW BARONS</div>
+        <div class="sponsor-cat">Official Vehicle Partner</div>
+        <p>Volkswagen Barons keeps Karo on the road — from Langebaan to Cape Town to every regatta on the South African coastline. Boards, sails and rider, all delivered to the start line.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Visit VW Barons</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">TAG HEUER</div>
+        <div class="sponsor-cat">Timing &amp; Watches</div>
+        <p>Precision Swiss timekeeping on a wrist that chases hundredths of a knot. A natural partnership between a brand built on speed and an athlete who lives for it.</p>
+        <a class="sponsor-link" href="https://tagheuer.com" target="_blank" rel="noopener">Visit TAG Heuer</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">NASHUA</div>
+        <div class="sponsor-cat">Office &amp; Communications</div>
+        <p>Nashua Paarl and West Coast keep the back-office of a professional career running — so Karo can focus on the wind, the wave and the race.</p>
+        <a class="sponsor-link" href="https://nashua.co.za" target="_blank" rel="noopener">Visit Nashua</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">ZULUFINS</div>
+        <div class="sponsor-cat">Custom Fins</div>
+        <p>Hand-built South African racing and speed fins — the unseen edge in every podium run. ZuluFins are forged for the brutal demands of slalom and speed sailing.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover ZuluFins</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">GASOIL FINS</div>
+        <div class="sponsor-cat">Speed Fins</div>
+        <p>Specialist speed fins for the ditches of Lüderitz and Walvis Bay. Engineered for one job: maximum knots on a 500&nbsp;m run.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Gasoil</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">O'SHEA</div>
+        <div class="sponsor-cat">Performance Wetsuits</div>
+        <p>Wetsuits and impact gear built for cold open ocean and big-wind sessions — keeping Karo on the water year-round on the West Coast.</p>
+        <a class="sponsor-link" href="https://osheasurf.com" target="_blank" rel="noopener">Visit O'Shea</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">GYPSEA</div>
+        <div class="sponsor-cat">Swimwear &amp; Lifestyle</div>
+        <p>Ocean-rooted swimwear and lifestyle apparel for the days between sessions. Gypsea backs Karo's mission of inspiring more women into the water.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Gypsea</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">GARY ROM</div>
+        <div class="sponsor-cat">Hairdressing</div>
+        <p>Salt, sun and 40&nbsp;knot wind take their toll. Gary Rom keeps the hair in shape between record runs and photo shoots.</p>
+        <a class="sponsor-link" href="https://garyrom.co.za" target="_blank" rel="noopener">Visit Gary Rom</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">DERMASURE</div>
+        <div class="sponsor-cat">Skincare &amp; Recovery</div>
+        <p>Medical-grade skincare from Dermasure and Zone keeps Karo's skin in shape after countless hours of salt, sun and 40&nbsp;knot wind exposure.</p>
+        <a class="sponsor-link" href="https://dermasure.co.za" target="_blank" rel="noopener">Visit Dermasure</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">GLOGGLZ</div>
+        <div class="sponsor-cat">Eyewear</div>
+        <p>Performance eyewear that stays put through high-wind racing and big crashes — protecting Karo's eyes against glare, salt and spray.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Glogglz</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">CAPE SPORT</div>
+        <div class="sponsor-cat">Centre &amp; Travel</div>
+        <p>The Cape Sport Centre in Langebaan — Karo's home base. The training ground where every record run begins.</p>
+        <a class="sponsor-link" href="https://capesport.co.za" target="_blank" rel="noopener">Visit Cape Sport</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">SURF'N'CURVE</div>
+        <div class="sponsor-cat">Boards &amp; Repair</div>
+        <p>South Africa's specialist surf and windsurf workshop, keeping Karo's gear ride-ready between continents and competitions.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Find Surf'n'Curve</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-logo">WINDWATERWAVES</div>
+        <div class="sponsor-cat">Watersports Retail</div>
+        <p>The South African retailer behind the scenes — supplying, supporting and shipping the gear that keeps Karo on the start line.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Visit WindWaterWaves</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-name">KARO VAN TONDER</div>
+  <div class="footer-tag">Pro Windsurfer · Langebaan, South Africa</div>
+  <div class="socials">
+    <a href="https://www.instagram.com/karo.vantonder" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+    </a>
+    <a href="https://www.facebook.com/karovantonderSA89/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/c/KarovanTonder" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.2-1C16.6 4 12 4 12 4s-4.6 0-7.9.2c-.5.1-1.4.1-2.2 1C1.2 5.9 1 7.5 1 7.5S.8 9.4.8 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.7.2 7.7.2s4.6 0 7.9-.3c.5-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8v-1.4c0-1.9-.2-3.8-.2-3.8zM9.7 15.1V7.9l6.2 3.6-6.2 3.6z"/></svg>
+    </a>
+    <a href="https://x.com/karosa89" target="_blank" rel="noopener" aria-label="X (Twitter)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+  </div>
+  <div class="copyright">© <span id="year">2026</span> Karo van Tonder · All rights reserved</div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
