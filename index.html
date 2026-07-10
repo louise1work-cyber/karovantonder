@@ -494,6 +494,89 @@
     background:rgba(233,200,154,0.10);
   }
   @media(max-width:1080px){.side-socials{display:none}}
+
+  /* ===== PORTRAIT PHOTO ===== */
+  .about-portrait .portrait-photo{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center 25%;
+    z-index:0;
+    transition:opacity .4s;
+  }
+  .about-portrait .portrait-photo.hover{opacity:0}
+  .about-portrait:hover .portrait-photo.hover{opacity:1}
+  .about-portrait::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 40%,rgba(3,16,42,0.65) 100%);
+    z-index:1;
+  }
+  .about-portrait .floating-num,
+  .about-portrait .portrait-meta{z-index:2}
+
+  /* ===== GALLERY PHOTOS ===== */
+  .photo img.tile-img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center;
+    z-index:0;
+    transition:transform .5s;
+  }
+  .photo:hover img.tile-img{transform:scale(1.04)}
+  .photo .label{z-index:3}
+
+  /* ===== LIGHTBOX ===== */
+  .lightbox{
+    position:fixed;inset:0;z-index:999;
+    background:rgba(3,16,42,0.85);
+    backdrop-filter:blur(8px);
+    display:none;align-items:center;justify-content:center;
+    padding:16px;
+  }
+  .lightbox.open{display:flex}
+  .lightbox img{
+    max-width:97vw;max-height:94vh;
+    width:auto;height:auto;object-fit:contain;
+    border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,0.5);
+  }
+  .lightbox .lb-close,
+  .lightbox .lb-prev,
+  .lightbox .lb-next{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;cursor:pointer;
+    transition:background .2s,border-color .2s;
+  }
+  .lightbox .lb-close:hover,
+  .lightbox .lb-prev:hover,
+  .lightbox .lb-next:hover{background:rgba(255,255,255,0.16);border-color:var(--gold)}
+  .lightbox .lb-close{top:24px;right:28px;width:48px;height:48px;font-size:22px}
+  .lightbox .lb-prev{top:50%;left:20px;transform:translateY(-50%);width:56px;height:56px;font-size:28px}
+  .lightbox .lb-next{top:50%;right:20px;transform:translateY(-50%);width:56px;height:56px;font-size:28px}
+  .lightbox .lb-count{
+    position:absolute;bottom:18px;left:0;right:0;
+    text-align:center;color:rgba(255,255,255,0.7);
+    font-size:14px;letter-spacing:0.04em;
+  }
+
+  /* ===== SPONSOR PHOTOS ===== */
+  .sponsor-photo{
+    position:relative;
+    margin:-34px -30px 22px;
+    height:180px;overflow:hidden;
+    border-radius:18px 18px 0 0;
+    background:#082247;
+  }
+  .sponsor-photo img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .5s;
+    cursor:zoom-in;
+  }
+  .sponsor:hover .sponsor-photo img{transform:scale(1.04)}
+  .sponsor-no-photo{
+    height:60px;margin-bottom:8px;display:flex;align-items:center;
+    color:var(--gold);opacity:0.55;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;
+  }
 </style>
 </head>
 <body>
@@ -505,6 +588,7 @@
       <a href="#about">About</a>
       <a href="#disciplines">Disciplines</a>
       <a href="#achievements">Achievements</a>
+      <a href="#education">Education</a>
       <a href="#gallery">Gallery</a>
       <a href="#sponsors">Sponsors</a>
     </div>
@@ -573,6 +657,8 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-portrait">
+        <img class="portrait-photo" src="images/about/karo-89-portrait.jpg" alt="Karo van Tonder"/>
+        <img class="portrait-photo hover" src="images/about/karo-89-hover.jpg" alt=""/>
         <div class="floating-num">89</div>
         <div class="portrait-meta">
           <div class="lc">Langebaan · South Africa</div>
@@ -680,6 +766,57 @@
   </div>
 </section>
 
+<!-- ===== EDUCATION & LEADERSHIP ===== -->
+<section id="education">
+  <div class="container">
+    <div class="eyebrow">Off the Water</div>
+    <h2 class="section-title">Education <em>&amp; leadership.</em></h2>
+    <p class="section-lead">Academic achievement and leadership roles alongside a professional racing career.</p>
+    <div class="timeline">
+      <div class="ach">
+        <span class="yr">2019</span>
+        <h4>Personal Training Qualification</h4>
+        <p>Trifocus Fitness Academy.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2012</span>
+        <h4>Postgraduate Diploma in Education</h4>
+        <p>UNISA.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2012</span>
+        <h4>City &amp; Guilds Diploma &middot; Chef &amp; Pastry</h4>
+        <p>West Coast Chef School.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2011</span>
+        <h4>BSc Food Science</h4>
+        <p>Stellenbosch University.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2008</span>
+        <h4>Rector's Reward</h4>
+        <p>Top academic achievement, Stellenbosch University.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2007</span>
+        <h4>Head Girl</h4>
+        <p>Outeniqua High School.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">2006</span>
+        <h4>Junior Mayor</h4>
+        <p>Outeniqua High School.</p>
+      </div>
+      <div class="ach">
+        <span class="yr">Honorary</span>
+        <h4>Honorary Award</h4>
+        <p>From alma mater Outeniqua High School, for achievements in windsurfing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== GALLERY ===== -->
 <section id="gallery">
   <div class="container">
@@ -687,45 +824,26 @@
     <h2 class="section-title">On the <em>water.</em></h2>
     <p class="section-lead">From the speed channels of Lüderitz to the home swells of Langebaan — the world Karo competes in. Add your favourite shots to the slots below.</p>
     <div class="gallery-grid">
-      <div class="photo large">
-        <div class="place-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
-        </div>
+      <div class="photo large" data-gallery="luderitz">
+        <img class="tile-img" src="images/gallery/luderitz/1.jpg" alt="Lüderitz Speed Run"/>
         <div class="label">Lüderitz · Speed Run</div>
       </div>
-      <div class="photo tall">
-        <div class="place-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
-        </div>
+      <div class="photo tall" data-gallery="langebaan">
+        <img class="tile-img" src="images/gallery/langebaan/1.jpg" alt="Langebaan Home Water"/>
         <div class="label">Langebaan · Home Water</div>
       </div>
-      <div class="photo small">
-        <div class="place-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
-        </div>
+      <div class="photo small" data-gallery="defiwind">
+        <img class="tile-img" src="images/gallery/defiwind/1.jpg" alt="Defi Wind France"/>
         <div class="label">Defi Wind · France</div>
       </div>
-      <div class="photo wide">
-        <div class="place-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
-        </div>
+      <div class="photo wide" data-gallery="slalom">
+        <img class="tile-img" src="images/gallery/slalom/1.jpg" alt="Slalom Racing"/>
         <div class="label">Slalom Racing</div>
       </div>
-      <div class="photo small">
-        <div class="place-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
-        </div>
+      <div class="photo small" data-gallery="mauritius">
+        <img class="tile-img" src="images/gallery/mauritius/1.jpg" alt="Mauritius"/>
         <div class="label">Mauritius</div>
       </div>
-      <div class="photo small">
-        <div class="place-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-9 9"/></svg>
-        </div>
-        <div class="label">West Coast Waves</div>
-      </div>
-    </div>
-    <div class="gallery-note">
-      Drop your photos into an <code>/images</code> folder and the placeholders above will become a real gallery.
     </div>
   </div>
 </section>
@@ -739,6 +857,7 @@
     <div class="sponsor-grid">
 
       <div class="sponsor">
+        <div class="sponsor-photo" data-gallery="severne"><img src="images/sponsors/severne/1.jpg" alt="Severne"/></div>
         <div class="sponsor-logo">SEVERNE</div>
         <div class="sponsor-cat">Sails &amp; Wetsuits</div>
         <p>Karo has been on the Severne international team since February 2016, riding the Reflex and Blade Pro race sails and Severne wave gear in every condition the planet throws at her.</p>
@@ -746,27 +865,15 @@
       </div>
 
       <div class="sponsor">
-        <div class="sponsor-logo">STARBOARD</div>
-        <div class="sponsor-cat">Boards</div>
-        <p>The board under her feet for racing and free riding. Starboard's slalom and speed shapes have carried Karo to multiple national, African and world results.</p>
-        <a class="sponsor-link" href="https://windsurf.star-board.com" target="_blank" rel="noopener">Visit Starboard</a>
+        <div class="sponsor-photo" data-gallery="zfins"><img src="images/sponsors/zfins/1.jpg" alt="Z-Fins"/></div>
+        <div class="sponsor-logo">Z-FINS</div>
+        <div class="sponsor-cat">Custom Fins</div>
+        <p>Precision-built racing and speed fins — the unseen edge in every podium run and record attempt.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Z-Fins</a>
       </div>
 
       <div class="sponsor">
-        <div class="sponsor-logo">AV BOARDS</div>
-        <div class="sponsor-cat">Custom Speed &amp; Slalom Boards</div>
-        <p>Hand-shaped speed and slalom weapons used in record runs at Lüderitz and on the international circuit. Precision engineering for the fastest 500&nbsp;m on the planet.</p>
-        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover AV Boards</a>
-      </div>
-
-      <div class="sponsor">
-        <div class="sponsor-logo">VW BARONS</div>
-        <div class="sponsor-cat">Official Vehicle Partner</div>
-        <p>Volkswagen Barons keeps Karo on the road — from Langebaan to Cape Town to every regatta on the South African coastline. Boards, sails and rider, all delivered to the start line.</p>
-        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Visit VW Barons</a>
-      </div>
-
-      <div class="sponsor">
+        <div class="sponsor-photo" data-gallery="tagheuer"><img src="images/sponsors/tagheuer/1.jpg" alt="TAG Heuer"/></div>
         <div class="sponsor-logo">TAG HEUER</div>
         <div class="sponsor-cat">Timing &amp; Watches</div>
         <p>Precision Swiss timekeeping on a wrist that chases hundredths of a knot. A natural partnership between a brand built on speed and an athlete who lives for it.</p>
@@ -774,6 +881,31 @@
       </div>
 
       <div class="sponsor">
+        <div class="sponsor-no-photo">Logo to come</div>
+        <div class="sponsor-logo">PICOT &amp; MOSS</div>
+        <div class="sponsor-cat">Partner</div>
+        <p>Supporting Karo's professional career on and off the water.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Picot &amp; Moss</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-photo" data-gallery="vwbarons"><img src="images/sponsors/vwbarons/1.jpg" alt="VW Barons"/></div>
+        <div class="sponsor-logo">VW BARONS</div>
+        <div class="sponsor-cat">Official Vehicle Partner</div>
+        <p>Volkswagen Barons keeps Karo on the road — from Langebaan to Cape Town to every regatta on the South African coastline. Boards, sails and rider, all delivered to the start line.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Visit VW Barons</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-photo" data-gallery="spp"><img src="images/sponsors/spp/1.jpg" alt="SPP"/></div>
+        <div class="sponsor-logo">SPP</div>
+        <div class="sponsor-cat">Stainless Plate Products</div>
+        <p>Engineering and fabrication support behind the scenes of Karo's equipment and travel.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover SPP</a>
+      </div>
+
+      <div class="sponsor">
+        <div class="sponsor-no-photo">Logo to come</div>
         <div class="sponsor-logo">NASHUA</div>
         <div class="sponsor-cat">Office &amp; Communications</div>
         <p>Nashua Paarl and West Coast keep the back-office of a professional career running — so Karo can focus on the wind, the wave and the race.</p>
@@ -781,34 +913,15 @@
       </div>
 
       <div class="sponsor">
-        <div class="sponsor-logo">ZULUFINS</div>
-        <div class="sponsor-cat">Custom Fins</div>
-        <p>Hand-built South African racing and speed fins — the unseen edge in every podium run. ZuluFins are forged for the brutal demands of slalom and speed sailing.</p>
-        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover ZuluFins</a>
+        <div class="sponsor-photo" data-gallery="iiflopsi"><img src="images/sponsors/iiflopsi/1.jpg" alt="Iiflopsi"/></div>
+        <div class="sponsor-logo">IIFLOPSI</div>
+        <div class="sponsor-cat">Partner</div>
+        <p>Supporting Karo's professional career on and off the water.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Iiflopsi</a>
       </div>
 
       <div class="sponsor">
-        <div class="sponsor-logo">GASOIL FINS</div>
-        <div class="sponsor-cat">Speed Fins</div>
-        <p>Specialist speed fins for the ditches of Lüderitz and Walvis Bay. Engineered for one job: maximum knots on a 500&nbsp;m run.</p>
-        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Gasoil</a>
-      </div>
-
-      <div class="sponsor">
-        <div class="sponsor-logo">O'SHEA</div>
-        <div class="sponsor-cat">Performance Wetsuits</div>
-        <p>Wetsuits and impact gear built for cold open ocean and big-wind sessions — keeping Karo on the water year-round on the West Coast.</p>
-        <a class="sponsor-link" href="https://osheasurf.com" target="_blank" rel="noopener">Visit O'Shea</a>
-      </div>
-
-      <div class="sponsor">
-        <div class="sponsor-logo">GYPSEA</div>
-        <div class="sponsor-cat">Swimwear &amp; Lifestyle</div>
-        <p>Ocean-rooted swimwear and lifestyle apparel for the days between sessions. Gypsea backs Karo's mission of inspiring more women into the water.</p>
-        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Gypsea</a>
-      </div>
-
-      <div class="sponsor">
+        <div class="sponsor-photo" data-gallery="garyrom"><img src="images/sponsors/garyrom/1.jpg" alt="Gary Rom"/></div>
         <div class="sponsor-logo">GARY ROM</div>
         <div class="sponsor-cat">Hairdressing</div>
         <p>Salt, sun and 40&nbsp;knot wind take their toll. Gary Rom keeps the hair in shape between record runs and photo shoots.</p>
@@ -816,38 +929,35 @@
       </div>
 
       <div class="sponsor">
-        <div class="sponsor-logo">DERMASURE</div>
+        <div class="sponsor-photo" data-gallery="skinlaser"><img src="images/sponsors/skinlaser/1.jpg" alt="Skin &amp; Laser Co"/></div>
+        <div class="sponsor-logo">SKIN &amp; LASER CO</div>
         <div class="sponsor-cat">Skincare &amp; Recovery</div>
-        <p>Medical-grade skincare from Dermasure and Zone keeps Karo's skin in shape after countless hours of salt, sun and 40&nbsp;knot wind exposure.</p>
-        <a class="sponsor-link" href="https://dermasure.co.za" target="_blank" rel="noopener">Visit Dermasure</a>
+        <p>Keeping Karo's skin in shape after countless hours of salt, sun and 40&nbsp;knot wind exposure.</p>
+        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Skin &amp; Laser Co</a>
       </div>
 
       <div class="sponsor">
-        <div class="sponsor-logo">GLOGGLZ</div>
-        <div class="sponsor-cat">Eyewear</div>
-        <p>Performance eyewear that stays put through high-wind racing and big crashes — protecting Karo's eyes against glare, salt and spray.</p>
-        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Discover Glogglz</a>
+        <div class="sponsor-photo" data-gallery="neostrata"><img src="images/sponsors/neostrata/1.jpg" alt="Neostrata"/></div>
+        <div class="sponsor-logo">NEOSTRATA</div>
+        <div class="sponsor-cat">Skincare</div>
+        <p>Medical-grade skincare supporting Karo's skin through years of sun, salt and offshore wind.</p>
+        <a class="sponsor-link" href="https://www.neostrata.com" target="_blank" rel="noopener">Visit Neostrata</a>
       </div>
 
       <div class="sponsor">
-        <div class="sponsor-logo">CAPE SPORT</div>
-        <div class="sponsor-cat">Centre &amp; Travel</div>
-        <p>The Cape Sport Centre in Langebaan — Karo's home base. The training ground where every record run begins.</p>
-        <a class="sponsor-link" href="https://capesport.co.za" target="_blank" rel="noopener">Visit Cape Sport</a>
+        <div class="sponsor-photo" data-gallery="heliocare"><img src="images/sponsors/heliocare/1.jpg" alt="Heliocare"/></div>
+        <div class="sponsor-logo">HELIOCARE</div>
+        <div class="sponsor-cat">Sun Protection</div>
+        <p>High-performance sun protection for hours-long sessions in direct coastal sun.</p>
+        <a class="sponsor-link" href="https://www.heliocare.com" target="_blank" rel="noopener">Visit Heliocare</a>
       </div>
 
       <div class="sponsor">
-        <div class="sponsor-logo">SURF'N'CURVE</div>
-        <div class="sponsor-cat">Boards &amp; Repair</div>
-        <p>South Africa's specialist surf and windsurf workshop, keeping Karo's gear ride-ready between continents and competitions.</p>
-        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Find Surf'n'Curve</a>
-      </div>
-
-      <div class="sponsor">
-        <div class="sponsor-logo">WINDWATERWAVES</div>
-        <div class="sponsor-cat">Watersports Retail</div>
-        <p>The South African retailer behind the scenes — supplying, supporting and shipping the gear that keeps Karo on the start line.</p>
-        <a class="sponsor-link" href="#" target="_blank" rel="noopener">Visit WindWaterWaves</a>
+        <div class="sponsor-photo" data-gallery="airush"><img src="images/sponsors/airush/1.jpg" alt="Airush"/></div>
+        <div class="sponsor-logo">AIRUSH</div>
+        <div class="sponsor-cat">Wingfoiling</div>
+        <p>Wingfoiling gear for Karo's growing time on the foil, alongside her windsurfing career.</p>
+        <a class="sponsor-link" href="https://airush.com" target="_blank" rel="noopener">Visit Airush</a>
       </div>
 
     </div>
@@ -875,8 +985,90 @@
   <div class="copyright">© <span id="year">2026</span> Karo van Tonder · All rights reserved</div>
 </footer>
 
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lb-close" id="lbClose" aria-label="Close">&#10005;</div>
+  <div class="lb-prev" id="lbPrev" aria-label="Previous">&#8249;</div>
+  <div class="lb-next" id="lbNext" aria-label="Next">&#8250;</div>
+  <img id="lbImg" src="" alt="Enlarged photo"/>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Lightbox — click any gallery tile or sponsor photo to open a slideshow of that set.
+  const galleries = {
+    luderitz:  { count: 8, path: 'images/gallery/luderitz/'  },
+    langebaan: { count: 8, path: 'images/gallery/langebaan/' },
+    defiwind:  { count: 8, path: 'images/gallery/defiwind/'  },
+    slalom:    { count: 8, path: 'images/gallery/slalom/'    },
+    mauritius: { count: 8, path: 'images/gallery/mauritius/' },
+    severne:   { count: 6, path: 'images/sponsors/severne/'  },
+    zfins:     { count: 2, path: 'images/sponsors/zfins/'    },
+    tagheuer:  { count: 8, path: 'images/sponsors/tagheuer/' },
+    vwbarons:  { count: 6, path: 'images/sponsors/vwbarons/' },
+    spp:       { count: 3, path: 'images/sponsors/spp/'      },
+    iiflopsi:  { count: 3, path: 'images/sponsors/iiflopsi/' },
+    garyrom:   { count: 5, path: 'images/sponsors/garyrom/'  },
+    skinlaser: { count: 2, path: 'images/sponsors/skinlaser/'},
+    neostrata: { count: 1, path: 'images/sponsors/neostrata/'},
+    heliocare: { count: 1, path: 'images/sponsors/heliocare/'},
+    airush:    { count: 5, path: 'images/sponsors/airush/'   },
+  };
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCount = document.getElementById('lbCount');
+  let lbKey = null;
+  let lbIdx = 0;
+
+  function lbOpen(key, i) {
+    if (!galleries[key]) return;
+    lbKey = key;
+    lbIdx = i || 0;
+    lbRender();
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function lbClose() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lbKey = null;
+  }
+  function lbRender() {
+    const g = galleries[lbKey];
+    if (!g) return;
+    const n = g.count;
+    lbIdx = ((lbIdx % n) + n) % n;
+    lbImg.src = g.path + (lbIdx + 1) + '.jpg';
+    lbCount.textContent = (lbIdx + 1) + ' / ' + n;
+  }
+  function lbStep(delta) {
+    if (!lbKey) return;
+    lbIdx += delta;
+    lbRender();
+  }
+
+  document.querySelectorAll('[data-gallery]').forEach(el => {
+    el.addEventListener('click', e => {
+      e.preventDefault();
+      lbOpen(el.dataset.gallery, 0);
+    });
+    el.style.cursor = 'zoom-in';
+  });
+  document.getElementById('lbClose').addEventListener('click', lbClose);
+  document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); lbStep(-1); });
+  document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); lbStep(1); });
+  lb.addEventListener('click', e => { if (e.target === lb) lbClose(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lbClose();
+    else if (e.key === 'ArrowLeft') lbStep(-1);
+    else if (e.key === 'ArrowRight') lbStep(1);
+  });
 </script>
 
 </body>
