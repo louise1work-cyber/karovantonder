@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Karo van Tonder — Professional Windsurfer</title>
 <meta name="description" content="Karo van Tonder — South African pro windsurfer. African speed record holder, slalom champion, and the first woman in the world to win an 80km windsurf race." />
+<link rel="icon" type="image/svg+xml" href="images/logo.svg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
@@ -70,7 +71,14 @@
   .logo{
     font-family:'Bebas Neue',sans-serif;
     font-size:24px;letter-spacing:2px;color:var(--ink);
+    display:inline-flex;align-items:center;gap:12px;
   }
+  .logo-mark{
+    width:38px;height:38px;flex-shrink:0;
+    filter:drop-shadow(0 4px 12px rgba(233,200,154,0.35));
+    transition:transform .3s;
+  }
+  .logo:hover .logo-mark{transform:rotate(-8deg) scale(1.05)}
   .logo span{
     font-family:'Playfair Display',serif;font-style:italic;font-weight:500;
     background:linear-gradient(120deg,var(--gold) 0%,var(--rose) 100%);
@@ -583,7 +591,7 @@
 
 <nav>
   <div class="nav-inner">
-    <div class="logo">KARO <span>/</span> VAN TONDER</div>
+    <a class="logo" href="#top" aria-label="Karo van Tonder — home"><img class="logo-mark" src="images/logo.svg" alt=""/>KARO <span>/</span> VAN TONDER</a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#disciplines">Disciplines</a>
